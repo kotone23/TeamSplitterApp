@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>グループ分け</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
-    <h1>グループ分けをしよう</h1>
-    <div id="app">
-        <textarea id="membersInput" placeholder="読点で区切って名前を入力してください"></textarea>
-        <button onclick="divideGroups()">分ける</button>
-        <div id="groupA" class="group">
-            <p>ここに表示されるよ！</p>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">グループ分けをしよう</h1>
+            <div class="field">
+                <label class="label">参加メンバー</label>
+                <div class="control">
+                    <textarea id="membersInput" placeholder="読点で区切って名前を入力してください"></textarea>
+                </div>
+                <div class="field">
+                    <button onclick="divideGroups()">分ける</button>
+                </div>
+                <div id="groupA" class="content" placeholder="ここに表示されるよ！"></div>
+                <div id="groupB" class="content" placeholder="ここに表示されるよ！"></div>
+            </div>
         </div>
-        <div id="groupB" class="group">
-            <p>ここに表示されるよ！</p>
-        </div>
-    </div>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
