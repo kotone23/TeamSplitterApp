@@ -1,0 +1,2 @@
+# TeamSplitterApp
+グループ分けをするアプリケーション
