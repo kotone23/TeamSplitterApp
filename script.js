@@ -1,14 +1,21 @@
 function divideGroups() {
     const input = document.getElementById('membersInput').value;
     const members = input.split('、').map(member => member.trim()).filter(member => member !== "");
-    const shuffled = members.sort(() => 0.5 - Math.random());
     
-    const midpoint = Math.ceil(shuffled.length / 2);
-    const groupA = shuffled.slice(0, midpoint);
-    const groupB = shuffled.slice(midpoint);
-
-    displayGroup('groupA', groupA);
-    displayGroup('groupB', groupB);
+    if (members.length === 0){
+        document.getElementById('groupA').innerHTML ='';
+        document.getElementById('groupB').innerHTML ='';
+        document.getElementById('message').innerHTML = `<p class='has-text-danger-dark'>メンバーを入力してください！</p><br>`;
+    } else {
+        document.getElementById('message').innerHTML ='';
+        const shuffled = members.sort(() => 0.5 - Math.random());
+        const midpoint = Math.ceil(shuffled.length / 2);
+        const groupA = shuffled.slice(0, midpoint);
+        const groupB = shuffled.slice(midpoint);
+    
+        displayGroup('groupA', groupA);
+        displayGroup('groupB', groupB);
+    }
 }
 
 function displayGroup(groupId, members) {
@@ -33,6 +40,6 @@ function displayGroup(groupId, members) {
             groupDiv.innerHTML += `${member}<br>`;
         });
     } else {
-        groupDiv.innerHTML = `メンバーがいません！`;
+        groupDiv.innerHTML += `メンバーがいません！`;
     }
 }
