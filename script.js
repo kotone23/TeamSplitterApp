@@ -16,8 +16,12 @@ function displayGroup(groupId, members) {
     groupDiv.innerHTML = '';
 
     if (members.length > 0) {
-        const leader = members[Math.floor(Math.random() * members.length)];
+        const leaderIndex = members[Math.floor(Math.random() * members.length)];
+        const leader = members[leaderIndex];
         groupDiv.innerHTML += `<strong>司会: ${leader}</strong><br>`;
+
+        // 司会者をメンバーリストから除外
+        members.splice(leaderIndex, 1);
         
         members.forEach(member => {
             groupDiv.innerHTML += `${member}<br>`;
