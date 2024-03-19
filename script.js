@@ -1,6 +1,6 @@
 function divideGroups() {
     const input = document.getElementById('membersInput').value;
-    const members = input.split(',').map(member => member.trim()).filter(member => member !== "");
+    const members = input.split('、').map(member => member.trim()).filter(member => member !== "");
     const shuffled = members.sort(() => 0.5 - Math.random());
     
     const midpoint = Math.ceil(shuffled.length / 2);
@@ -17,12 +17,12 @@ function displayGroup(groupId, members) {
 
     if (members.length > 0) {
         const leader = members[Math.floor(Math.random() * members.length)];
-        groupDiv.innerHTML += `<strong>Leader: ${leader}</strong><br>`;
+        groupDiv.innerHTML += `<strong>司会者: ${leader}</strong><br>`;
         
         members.forEach(member => {
             groupDiv.innerHTML += `${member}<br>`;
         });
     } else {
-        groupDiv.innerHTML = 'No members in the group';
+        groupDiv.innerHTML = 'メンバーがいません！';
     }
 }
