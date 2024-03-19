@@ -13,13 +13,15 @@
             <div class="field">
                 <label class="label">参加メンバー</label>
                 <div class="control">
-                    <textarea id="membersInput" placeholder="読点で区切って名前を入力してください"></textarea>
+                    <textarea id="membersInput" class="textarea is-primary" placeholder="読点で区切って名前を入力してください"></textarea>
                 </div>
+                <div class="field is-grouped is-grouped-centered">
                 <div class="field">
-                    <button onclick="divideGroups()">分ける</button>
+                    <button onclick="divideGroups()" class="button is-primary">分ける</button>
                 </div>
-                <div id="groupA" class="content" placeholder="ここに表示されるよ！"></div>
-                <div id="groupB" class="content" placeholder="ここに表示されるよ！"></div>
+                </div>
+                <div id="groupA" class="content"></div>
+                <div id="groupB" class="content"></div>
             </div>
         </div>
     </section>

@@ -16,10 +16,8 @@ function displayGroup(groupId, members) {
     groupDiv.innerHTML = '';
 
     if (groupId == 'groupA') {
-        console.log(groupId)
         groupDiv.innerHTML = `<strong>グループA</strong><br>`;
     } else {
-        console.log(groupId)
         groupDiv.innerHTML = `<strong>グループB</strong><br>`;
     }
 
