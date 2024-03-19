@@ -16,7 +16,7 @@ function displayGroup(groupId, members) {
     groupDiv.innerHTML = '';
 
     if (members.length > 0) {
-        const leaderIndex = members[Math.floor(Math.random() * members.length)];
+        const leaderIndex = Math.floor(Math.random() * members.length);
         const leader = members[leaderIndex];
         groupDiv.innerHTML += `<strong>司会: ${leader}</strong><br>`;
 
