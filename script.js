@@ -17,7 +17,7 @@ function displayGroup(groupId, members) {
 
     if (members.length > 0) {
         const leader = members[Math.floor(Math.random() * members.length)];
-        groupDiv.innerHTML += `<strong>司会者: ${leader}</strong><br>`;
+        groupDiv.innerHTML += `<strong>司会: ${leader}</strong><br>`;
         
         members.forEach(member => {
             groupDiv.innerHTML += `${member}<br>`;
