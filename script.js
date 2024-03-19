@@ -4,21 +4,29 @@ function divideGroups() {
     const shuffled = members.sort(() => 0.5 - Math.random());
     
     const midpoint = Math.ceil(shuffled.length / 2);
-    const group1 = shuffled.slice(0, midpoint);
-    const group2 = shuffled.slice(midpoint);
+    const groupA = shuffled.slice(0, midpoint);
+    const groupB = shuffled.slice(midpoint);
 
-    displayGroup('group1', group1);
-    displayGroup('group2', group2);
+    displayGroup('groupA', groupA);
+    displayGroup('groupB', groupB);
 }
 
 function displayGroup(groupId, members) {
     const groupDiv = document.getElementById(groupId);
     groupDiv.innerHTML = '';
 
+    if (groupId == 'groupA') {
+        console.log(groupId)
+        groupDiv.innerHTML = `<strong>グループA</strong><br>`;
+    } else {
+        console.log(groupId)
+        groupDiv.innerHTML = `<strong>グループB</strong><br>`;
+    }
+
     if (members.length > 0) {
         const leaderIndex = Math.floor(Math.random() * members.length);
         const leader = members[leaderIndex];
-        groupDiv.innerHTML += `<strong>司会: ${leader}</strong><br>`;
+        groupDiv.innerHTML += `司会: ${leader}<br>`;
 
         // 司会者をメンバーリストから除外
         members.splice(leaderIndex, 1);
@@ -27,6 +35,6 @@ function displayGroup(groupId, members) {
             groupDiv.innerHTML += `${member}<br>`;
         });
     } else {
-        groupDiv.innerHTML = 'メンバーがいません！';
+        groupDiv.innerHTML = `メンバーがいません！`;
     }
 }
