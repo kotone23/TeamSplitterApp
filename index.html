@@ -16,13 +16,15 @@
                     <textarea id="membersInput" class="textarea is-primary" placeholder="読点で区切って名前を入力してください"></textarea>
                 </div>
                 <div class="field is-grouped is-grouped-centered">
-                <div class="field">
-                    <button onclick="divideGroups()" class="button is-primary">分ける</button>
+                    <p>
+                    <button onclick="divideGroups()" class="button is-primary is-medium">分ける</button>
+                    <button onclick="clearInput()" class="button is-primary is-medium is-outlined">クリア</button>
+                    </p>
                 </div>
-                </div>
-                <div id="message" class="content"></div>
-                <div id="groupA" class="content"></div>
-                <div id="groupB" class="content"></div>
+                <div id="message" class="notification is-danger is-light"></div>
+
+                <div id="groupA" class="box"></div>
+                <div id="groupB" class="box"></div>
             </div>
         </div>
     </section>

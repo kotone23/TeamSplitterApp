@@ -52,3 +52,12 @@ function displayGroup(groupId, members) {
         groupDiv.innerHTML += `メンバーがいません！`;
     }
 }
+
+function clearInput() {
+    // テキストエリアの内容をクリア
+    document.getElementById('membersInput').value = '';
+    // localStorageからメンバーリストを削除
+    localStorage.removeItem('members');
+    // オプション: メッセージエリアがあれば、その内容もクリアする
+    document.getElementById('message').innerText = '';
+}
