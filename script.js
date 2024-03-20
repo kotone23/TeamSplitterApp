@@ -14,7 +14,7 @@ function divideGroups() {
     if (members.length === 0){
         document.getElementById('groupA').innerHTML ='';
         document.getElementById('groupB').innerHTML ='';
-        document.getElementById('message').innerHTML = `<p class='has-text-danger-dark'>メンバーを入力してください！</p><br>`;
+        document.getElementById('message').innerHTML = `<div class="notification is-danger is-light">メンバーを入力してください！</div><br>`;
     } else {
         document.getElementById('message').innerHTML ='';
         const shuffled = members.sort(() => 0.5 - Math.random());
@@ -32,9 +32,9 @@ function displayGroup(groupId, members) {
     groupDiv.innerHTML = '';
 
     if (groupId == 'groupA') {
-        groupDiv.innerHTML = `<strong>グループA</strong><br>`;
+        groupDiv.innerHTML = `<div class="box"><strong>グループA</strong><br>`;
     } else {
-        groupDiv.innerHTML = `<strong>グループB</strong><br>`;
+        groupDiv.innerHTML = `<div class="box"><strong>グループB</strong><br>`;
     }
 
     if (members.length > 0) {
@@ -46,14 +46,15 @@ function displayGroup(groupId, members) {
         members.splice(leaderIndex, 1);
         
         members.forEach(member => {
-            groupDiv.innerHTML += `${member}<br>`;
+            groupDiv.innerHTML += `${member}</div><br>`;
         });
     } else {
-        groupDiv.innerHTML += `メンバーがいません！`;
+        groupDiv.innerHTML += `メンバーがいません！</div>`;
     }
 }
 
 function clearInput() {
+    console.log('clear');
     // テキストエリアの内容をクリア
     document.getElementById('membersInput').value = '';
     // localStorageからメンバーリストを削除
