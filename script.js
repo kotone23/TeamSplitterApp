@@ -13,7 +13,7 @@ function divideGroups() {
     const groupCount = parseInt(document.getElementById('groupCount').value, 10);
     // 入力されたメンバーリストとグループ数をlocalStorageに保存
     localStorage.setItem('members', input);
-    localStorage.setItem('numberOfGroups', input);
+    localStorage.setItem('numberOfGroups', groupCount.toString());
     const members = input.split('、').map(member => member.trim()).filter(member => member !== "");
     const shuffled = members.sort(() => 0.5 - Math.random());
 
