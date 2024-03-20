@@ -29,28 +29,31 @@ function divideGroups() {
 
 function displayGroup(groupId, members) {
     const groupDiv = document.getElementById(groupId);
-    groupDiv.innerHTML = '';
+    let content = ''; // コンテンツを追加するための一時的な変数
 
     if (groupId == 'groupA') {
-        groupDiv.innerHTML = `<div class="box"><strong>グループA</strong><br>`;
+        content += `<div class="box"><strong>グループA</strong><br>`;
     } else {
-        groupDiv.innerHTML = `<div class="box"><strong>グループB</strong><br>`;
+        content += `<div class="box"><strong>グループB</strong><br>`;
     }
 
     if (members.length > 0) {
         const leaderIndex = Math.floor(Math.random() * members.length);
         const leader = members[leaderIndex];
-        groupDiv.innerHTML += `司会: ${leader}<br>`;
+        content += `司会: ${leader}<br>`;
 
         // 司会者をメンバーリストから除外
         members.splice(leaderIndex, 1);
-        
+
         members.forEach(member => {
-            groupDiv.innerHTML += `${member}</div><br>`;
+            content += `${member}<br>`; // メンバー追加
         });
+        content += `</div><br>`; // boxクラスのdivを閉じる
     } else {
-        groupDiv.innerHTML += `メンバーがいません！</div>`;
+        content += `メンバーがいません！</div>`; // ここでもboxクラスのdivを閉じる
     }
+
+    groupDiv.innerHTML = content; // 最終的なコンテンツをgroupDivに設定
 }
 
 function clearInput() {
