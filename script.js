@@ -1,5 +1,14 @@
+// ページ読み込み時に前回のメンバーリストをテキストエリアにセット
+document.addEventListener('DOMContentLoaded', (event) => {
+    if (localStorage.getItem('members')) {
+        document.getElementById('membersInput').value = localStorage.getItem('members');
+    }
+});
+
 function divideGroups() {
     const input = document.getElementById('membersInput').value;
+    // 入力されたメンバーリストをlocalStorageに保存
+    localStorage.setItem('members', input);
     const members = input.split('、').map(member => member.trim()).filter(member => member !== "");
     
     if (members.length === 0){
